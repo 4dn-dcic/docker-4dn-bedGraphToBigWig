@@ -6,5 +6,8 @@ INPUT=$1
 CHROMESIZE=$2
 OUTDIR=$3
 
-gunzip $INPUT.bedGraph.gz 
-bedGraphToBigWig $INPUT.bedGraph $CHROMESIZE $OUTDIR/$INPUT.bw
+mkfifo pp.$k
+
+
+gunzip -c $INPUT.bedGraph.gz > pp.$k
+bedGraphToBigWig pp.$k.bedGraph $CHROMESIZE $OUTDIR/$INPUT.bw
