@@ -11,3 +11,5 @@ mkfifo pp.$k
 
 gunzip -c $INPUT > pp.$k.bedGraph
 bedGraphToBigWig pp.$k.bedGraph $CHROMESIZE $OUTDIR/res_file.bw
+rm pp.$k
+rm pp..bedGraph
