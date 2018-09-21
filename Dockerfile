@@ -57,7 +57,7 @@ COPY downloads.sh .
 RUN . downloads.sh
 
 # set path
-ENV PATH=/usr/local/bin/repli-seq-pipeline/scripts:$PATH
+ENV PATH=/usr/local/bin/scripts:$PATH
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
 ENV PATH=/usr/local/bin/bedtools2/bin/:$PATH
@@ -74,4 +74,4 @@ COPY scripts/ .
 RUN chmod +x run*.sh
 
 # default command
-CMD ["ls","/usr/local/bin/repli-seq-pipeline/scripts"]
+CMD ["ls","/usr/local/bin/scripts"]
