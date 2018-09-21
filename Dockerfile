@@ -74,4 +74,4 @@ COPY scripts/ .
 RUN chmod +x run*.sh
 
 # default command
-CMD ["ls","/usr/local/bin/scripts"]
+CMD ["ls","/usr/local/bin/"]
