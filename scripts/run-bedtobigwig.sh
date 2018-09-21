@@ -9,5 +9,5 @@ OUTDIR=$3
 mkfifo pp.$k
 
 
-gunzip -c $INPUT.bedGraph.gz > pp.$k
-bedGraphToBigWig pp.$k.bedGraph $CHROMESIZE $OUTDIR/$INPUT.bw
+gunzip -c $INPUT > pp.$k.bedGraph
+bedGraphToBigWig pp.$k.bedGraph $CHROMESIZE $OUTDIR/res_file.bw
