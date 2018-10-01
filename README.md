@@ -1,6 +1,6 @@
 # docker-4dn-bedGraphToBigWig
 
-This repo contains the source files for a docker image stored in duplexa/4dn-repliseq:v13.1. (we will change the docker hub account soon)
+This repo contains the source files for a docker image stored in duplexa/bedgraphtobigwig. (we will change the docker hub account soon)
 
 ## Table of contents
 * [Cloning the repo](#cloning-the-repo)
@@ -13,7 +13,7 @@ This repo contains the source files for a docker image stored in duplexa/4dn-rep
 ## Cloning the repo
 ```
 git clone https://github.com/4dn-dcic/docker-4dn-bedGraphToBigWig
-cd docker-4dn-repliseq
+cd docker-4dn-bedGraphToBigWig
 ```
 
 ## Tool specifications
@@ -21,10 +21,10 @@ Major software tools used inside the docker container are downloaded by the scri
 The `downloads.sh` file also contains comment lines that specifies the name and version of individual software tools.
 
 ## Building docker image
-You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace duplexa/4dn-repliseq:v13.1 with your desired docker repo name. You need permission to push to duplexa/4dn-repliseq:v13.1.
+You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace duplexa/4dn-bedgraphtobigwig with your desired docker repo name. You need permission to push to duplexa/bedgraphtobigwig.
 ```
-docker build -t duplexa/4dn-repliseq:v13.1 .
-docker push duplexa/4dn-repliseq:v13.1
+docker build -t duplexa/bedgraphtobigwig .
+docker push duplexa/bedgraphtobigwig
 ```
 You can skip this if you want to use an already built image on docker hub (image name duplexa/4dn-repliseq:v13.1). The command 'docker run' (below) automatically pulls the image from docker hub.
 
@@ -32,7 +32,7 @@ You can skip this if you want to use an already built image on docker hub (image
 ## Benchmarking tools
 To obtain run time and max mem stats, use `usr/bin/time` that is installed in the docker container. For example, run the following to benchmark `du`.
 ```
-docker run duplexa/4dn-repliseq:v13.1 /usr/bin/time du 2> log
+docker run duplexa/bedgraphtobigwig /usr/bin/time du 2> log
 cat log
 ```
 The output looks as follows:
@@ -53,11 +53,11 @@ Tool wrappers are under the `scripts` directory and follow naming conventions `r
 
 ```
 # default
-docker run duplexa/4dn-repliseq:v13.1
+docker run duplexa/bedgraphtobigwig
 
 # specific run command
-docker run duplexa/4dn-repliseq:v13.1 <run-xx.sh> <arg1> <arg2> ...
+docker run duplexa/bedgraphtobigwig <run-xx.sh> <arg1> <arg2> ...
 
 # may need -v option to mount data file/folder if they are used as arguments.
-docker run -v /data1/:/d1/:rw -v /data2/:/d2/:rw duplexa/4dn-repliseq:v13.1 <run-xx.sh> /d1/file1 /d2/file2 ...
+docker run -v /data1/:/d1/:rw -v /data2/:/d2/:rw duplexa/4dn-bedgraphtobigwig <run-xx.sh> /d1/file1 /d2/file2 ...
 ```
