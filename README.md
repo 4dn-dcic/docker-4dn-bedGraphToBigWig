@@ -1,7 +1,6 @@
 # docker-4dn-bedGraphToBigWig
 
-This repo contains the source files for a docker image stored in duplexa/bedgraphtobigwig. (we will change the docker hub account soon)
-
+This repo contains the source files for a docker image stored in 4dndcic/4dn-bedgraphtobigwig.
 ## Table of contents
 * [Cloning the repo](#cloning-the-repo)
 * [Tool specifications](#tool-specifications)
@@ -21,12 +20,12 @@ Major software tools used inside the docker container are downloaded by the scri
 The `downloads.sh` file also contains comment lines that specifies the name and version of individual software tools.
 
 ## Building docker image
-You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace duplexa/4dn-bedgraphtobigwig with your desired docker repo name. You need permission to push to duplexa/bedgraphtobigwig.
+You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace 4dndcic/4dn-bedgraphtobigwig with your desired docker repo name. You need permission to push to 4dndcic/4dn-bedgraphtobigwig.
 ```
-docker build -t duplexa/bedgraphtobigwig .
-docker push duplexa/bedgraphtobigwig
+docker build -t 4dndcic/4dn-bedgraphtobigwig .
+docker push 4dndcic/4dn-bedgraphtobigwig
 ```
-You can skip this if you want to use an already built image on docker hub (image name duplexa/4dn-repliseq:v13.1). The command 'docker run' (below) automatically pulls the image from docker hub.
+You can skip this if you want to use an already built image on docker hub (image name 4dndcic/4dn-bedgraphtobigwig). The command 'docker run' (below) automatically pulls the image from docker hub.
 
 
 ## Benchmarking tools
@@ -53,11 +52,11 @@ Tool wrappers are under the `scripts` directory and follow naming conventions `r
 
 ```
 # default
-docker run duplexa/bedgraphtobigwig
+docker run 4dndcic/4dn-bedgraphtobigwig
 
 # specific run command
-docker run duplexa/bedgraphtobigwig <run-xx.sh> <arg1> <arg2> ...
+docker run 4dndcic/4dn-bedgraphtobigwig <run-xx.sh> <arg1> <arg2> ...
 
 # may need -v option to mount data file/folder if they are used as arguments.
-docker run -v /data1/:/d1/:rw -v /data2/:/d2/:rw duplexa/4dn-bedgraphtobigwig <run-xx.sh> /d1/file1 /d2/file2 ...
+docker run -v /data1/:/d1/:rw -v /data2/:/d2/:rw 4dndcic/4dn-bedgraphtobigwig <run-xx.sh> /d1/file1 /d2/file2 ...
 ```
