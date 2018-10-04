@@ -10,7 +10,7 @@ services:
   - docker
  
 env:
-  - LOCAL_NAME=docker-4dn-bedGraphToBigWig REMOTE_NAME=4dndcic/4dn-bedgraphtobigwig
+  - LOCAL_NAME=docker-4dn-bedgraphtobigwig REMOTE_NAME=4dndcic/4dn-bedgraphtobigwig
 
 install:
   - docker build -t $LOCAL_NAME .
