@@ -1,11 +1,19 @@
 set -e 
-CWL_NAME=$1
-CWL_FILENAME=$1.input.json
+INPUT=$1.input_file.json
+CHROMSIZE=$2.chromsize.json
 CWD=$(pwd)
 OUTDIR=$CWD/tests/test_outdir
-LOCAL_CWL_TMPDIR=$CWD/tests/test_tmp
-CWL_RUNNER=$(which cwltool)
-RUNNER_FLAGS="--copy-outputs --no-read-only --no-match-user --outdir $OUTDIR --tmp-outdir-prefix $LOCAL_CWL_TMPDIR --tmpdir-prefix $LOCAL_CWL_TMPDIR --no-strict --debug"
-cd cwl
-$CWL_RUNNER $RUNNER_FLAGS $CWL_FILENAME ../tests/test_input_json/$INPUT_JSON_NAME | pyhton $CWD/tests/json_null_test.py
-cd ..
+
+../run-bedtobigwig.sh $INPUT $CHROMSIZE $OUTDIR
+
+if [ -f "$OUTDIR/$INPUT.bw];
+then
+   echo "Output File exists."
+   return 0;
+else
+   echo "Output File does not exists."
+   return 1;
+fi 
+
+
+ 
