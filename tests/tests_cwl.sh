@@ -1,10 +1,10 @@
 set -e 
-INPUT="input_file.json"
-CHROMSIZE="chromsize.json"
+INPUT="bedgrapthtobigwig-parta.input.json"
+CHROMSIZE="bedgrapthtobigwig-parta.chromsize.json"
 CWD=$(pwd)
 OUTDIR=$CWD/tests/test_outdir
 
-../run-bedtobigwig.sh $INPUT $CHROMSIZE $OUTDIR
+../script/run-bedtobigwig.sh $INPUT $CHROMSIZE $OUTDIR
 
 if [ -f "$OUTDIR/$INPUT.bw];
 then
