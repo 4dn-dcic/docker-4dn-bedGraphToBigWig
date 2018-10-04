@@ -10,5 +10,4 @@ else:
 
 print(s)
 for k in s:
-    if s[k] is None:
-        raise Exception("Field {} is null.".format(k))
+     path = s[k]["path"]
