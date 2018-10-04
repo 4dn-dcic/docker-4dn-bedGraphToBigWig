@@ -4,7 +4,7 @@ CHROMSIZE="bedgrapthtobigwig-parta.chromsize.json"
 CWD=$(pwd)
 OUTDIR=$CWD/tests/test_outdir
 
-../scripts/run-bedtobigwig.sh $INPUT $CHROMSIZE $OUTDIR
+../../scripts/run-bedtobigwig.sh $INPUT $CHROMSIZE $OUTDIR
 
 if [ -f "$OUTDIR/$INPUT.bw];
 then
