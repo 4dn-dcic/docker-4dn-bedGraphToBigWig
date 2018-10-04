@@ -1,6 +1,6 @@
 set -e 
-INPUT=$1.input_file.json
-CHROMSIZE=$2.chromsize.json
+INPUT="input_file.json"
+CHROMSIZE="chromsize.json"
 CWD=$(pwd)
 OUTDIR=$CWD/tests/test_outdir
 
