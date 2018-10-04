@@ -10,7 +10,7 @@ services:
   - docker
  
 env:
-  - LOCAL_NAME=docker-4dn-repliseq_local REMOTE_NAME=duplexa/4dn-repliseq
+  - LOCAL_NAME=docker-4dn-bedGraphToBigWig REMOTE_NAME=4dndcic/4dn-bedgraphtobigwig
 
 install:
   - docker build -t $LOCAL_NAME .
@@ -26,7 +26,7 @@ before_script:
 
 script:
   - source tests/tests.sh
-  - source tests/tests_cwl_all.sh
+  - source tests/tests_cwl.sh
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
