@@ -1,9 +1,9 @@
 {
-   "bg_file": {
+   "bgfile": {
        "class": "File",
        "path": "../test_files/4DNFIU37KWB1.bedGraph.gz"
    },
-   "chromsizes":{
+   "chromsize":{
         "class": "File",
         "path": "../test_files/4DNFI823LSII.chrom.sizes"
    }    
