@@ -31,6 +31,6 @@ outputs:
  bwfile:
   type: File
   outputBinding:
-   glob: "$(inputs.outdir + '/' +  '*.bw')"
+   glob: "$('*.bw')"
   
 baseCommand: ["run-bedtobigwig.sh"]
