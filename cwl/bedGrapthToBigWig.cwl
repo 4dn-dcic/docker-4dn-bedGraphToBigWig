@@ -21,10 +21,11 @@ inputs:
   inputBinding:
    position: 1
  
- outdir: "."
+ outdir:
   type: string
   inputBinding:
    position: 3 
+  default: "."
 
 outputs:
  bwfile:
