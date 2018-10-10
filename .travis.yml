@@ -25,7 +25,7 @@ before_script:
     fi;
 
 script:
-  - source tests/tests_cwl.sh
+  - source tests/tests_cwl.sh bedGraphToBigWig.cwl
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
