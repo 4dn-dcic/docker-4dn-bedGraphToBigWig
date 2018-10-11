@@ -1,5 +1,5 @@
 sudo: required
-language: c python
+language: python
 python: 3.6
 os: linux
 addons:
