@@ -1,5 +1,5 @@
 sudo: required
-language: python
+language: c python
 python: 3.6
 os: linux
 addons:
@@ -25,7 +25,7 @@ before_script:
     fi;
 
 script:
-  - source tests/tests_cwl.sh bedGraphToBigWig.cwl
+  - source tests/tests_cwl.sh bedGraphToBigWig
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
