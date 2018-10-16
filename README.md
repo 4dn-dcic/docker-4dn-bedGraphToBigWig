@@ -31,7 +31,7 @@ You can skip this if you want to use an already built image on docker hub (image
 ## Benchmarking tools
 To obtain run time and max mem stats, use `usr/bin/time` that is installed in the docker container. For example, run the following to benchmark `du`.
 ```
-docker run duplexa/bedgraphtobigwig /usr/bin/time du 2> log
+docker run 4dndcic/4dn-bedgraphtobigwig /usr/bin/time du 2> log
 cat log
 ```
 The output looks as follows:
