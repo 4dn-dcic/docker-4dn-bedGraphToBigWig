@@ -33,22 +33,6 @@ RUN apt-get update -y && apt-get install -y \
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
     apt-get install -y git-lfs
 
-
-# installing R & R libraries
-# r-base, r-base-dev for R, libcurl4-openssl-dev, libssl-dev for devtools
-RUN apt-get update -y && apt-get install -y \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    r-base \
-    r-base-dev
-
-RUN R -e 'install.packages("devtools", repos="http://cran.us.r-project.org")' && \
-    R -e 'devtools::install_github("dvera/conifur")' && \
-    R -e 'devtools::install_github("dvera/converge")' && \
-    R -e 'devtools::install_github("dvera/gyro")' && \
-    R -e 'devtools::install_github("dvera/travis")' && \
-    R -e "install.packages(c('docopt','yaml'), repos = 'http://cran.us.r-project.org')"
-
 # download tools
 WORKDIR /usr/local/bin
 COPY downloads.sh .
