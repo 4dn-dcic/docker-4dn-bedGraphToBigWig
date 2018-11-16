@@ -1,30 +1,22 @@
 #!/bin/bash
 
-# Aggregates a Bed file to a format compatible with higlass (beddb)
+# Runs bedtobigwig. Converts a bedgraph file into a bigwig file.
 
 INPUT=$1
-ASSEMBLY=$2
+CHROMESIZE=$2
 OUTDIR=$3
 
 FILE_BASE=$(basename $INPUT)
-FILE_NAME=${FILE_BASE%.*}
-echo $FILE_NAME
+FILE_NAME=${FILE_BASE%%.*}
 
 mkfifo pp
 
 if [ ! -d "$OUTDIR" ]
-then
-  mkdir $OUTDIR
+then 
+ mkdir $OUTDIR
 fi
 
-gunzip -c $INPUT > pp.bed
-
-outputfile="$OUTDIR/$FILE_NAME.beddb"
-echo $outputfile
-
-clodius aggregate bedfile \
-  --assembly $ASSEMBLY -o $outputfile \
-   pp.bed
-
+gunzip -c $INPUT > pp.bedGraph
+bedGraphToBigWig pp.bedGraph $CHROMESIZE $OUTDIR/$FILE_NAME.bw
 rm pp
-rm pp.bed
+rm pp.bedGraph
