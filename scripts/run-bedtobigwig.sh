@@ -17,6 +17,7 @@ then
 fi
 
 gunzip -c $INPUT > pp.bedGraph
+python checkBGformat_v2.py pp.bedGraph $CHROMESIZE  
 bedGraphToBigWig pp.bedGraph $CHROMESIZE $OUTDIR/$FILE_NAME.bw
 rm pp
 rm pp.bedGraph
