@@ -19,7 +19,7 @@ fi
 
 gunzip -c $INPUT > pp.bedGraph
 
-if  ! python checkBGformat_v3.py pp.bedGraph $CHROMESIZE; then
+if  ! python /usr/local/bin/checkBGformat_v3.py pp.bedGraph $CHROMESIZE; then
     rm pp
     rm pp.bedGraph
     exit 1
