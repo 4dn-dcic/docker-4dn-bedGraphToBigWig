@@ -1,0 +1,11 @@
+
+{
+   "bgfile": {
+       "class": "File",
+       "path": "../test_files/missing_values.bedGraph.gz"
+   },
+   "chromsize":{
+        "class": "File",
+        "path": "../test_files/4DNFI823LSII.chrom.sizes"
+   }
+}

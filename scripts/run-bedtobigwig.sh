@@ -12,11 +12,20 @@ FILE_NAME=${FILE_BASE%%.*}
 mkfifo pp
 
 if [ ! -d "$OUTDIR" ]
-then 
+then
+ echo "Directory does not exits!"
  mkdir $OUTDIR
 fi
 
 gunzip -c $INPUT > pp.bedGraph
+
+if  ! python /usr/local/bin/checkBGformat_v3.py pp.bedGraph $CHROMESIZE; then
+    rm pp
+    rm pp.bedGraph
+    exit 1
+fi
+
 bedGraphToBigWig pp.bedGraph $CHROMESIZE $OUTDIR/$FILE_NAME.bw
+
 rm pp
 rm pp.bedGraph
