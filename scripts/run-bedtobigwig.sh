@@ -9,6 +9,8 @@ OUTDIR=$3
 FILE_BASE=$(basename $INPUT)
 FILE_NAME=${FILE_BASE%%.*}
 
+echo "hello"
+
 mkfifo pp
 
 if [ ! -d "$OUTDIR" ]
