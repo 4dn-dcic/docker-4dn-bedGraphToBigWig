@@ -33,4 +33,4 @@ outputs:
   outputBinding:
    glob: "$(inputs.outdir + '/' + '*.bw')"
 
-baseCommand: ["run-bedtobigwig.sh"]
+baseCommand: ["run-bedgraphtobigwig.sh"]
