@@ -6,7 +6,7 @@ cwlVersion: v1.0
 
 requirements:
 - class: DockerRequirement
-  dockerPull: "4dndcic/4dn-bedgraphtobigwig:v5"
+  dockerPull: "4dndcic/4dn-bedgraphtobigwig:v6"
 
 - class: "InlineJavascriptRequirement"
 
